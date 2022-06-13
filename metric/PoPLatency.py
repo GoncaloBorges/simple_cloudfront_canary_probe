@@ -49,7 +49,7 @@ def cw_put_metric_data(d,m,p,v):
                 'Value': v
             },
         ],
-        Namespace = 'PoC / CloudFront Canary'
+        Namespace = 'Simple CloudFront Canary Probe'
     )
     
     if cw_response['ResponseMetadata']['HTTPStatusCode'] > 200:
@@ -130,8 +130,8 @@ def main():
         res = get_response(ur)
         #print(res)
 
-        print('Corrently not pushing CW metrics. Comment the continue!')
-        continue
+        # print('Corrently not pushing CW metrics. Comment the continue!')
+        # continue
 
         cw_put_metric_data(cf,'pycurl-dns',res[0],res[1])
         cw_put_metric_data(cf,'pycurl-connect',res[0],res[2])
