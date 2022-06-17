@@ -135,13 +135,14 @@ def main():
 
         cw_put_metric_data(cf,'pycurl-dns',res[0],res[1])
         cw_put_metric_data(cf,'pycurl-connect',res[0],res[2])
+        cw_put_metric_data(cf,'pycurl-pretransfer',res[0],res[3])
 
         if res[6] == 'cdn-cache-hit':
-            cw_put_metric_data(cf,'hit-pycurl-pretransfer',res[0],res[3])
+            # cw_put_metric_data(cf,'hit-pycurl-pretransfer',res[0],res[3])
             cw_put_metric_data(cf,'hit-pycurl-fbl',res[0],res[4])
             cw_put_metric_data(cf,'hit-pycurl-totaltime',res[0],res[5])
         else:
-            cw_put_metric_data(cf,'miss-pycurl-pretransfer',res[0],res[3])
+            # cw_put_metric_data(cf,'miss-pycurl-pretransfer',res[0],res[3])
             cw_put_metric_data(cf,'miss-pycurl-fbl',res[0],res[4])
             cw_put_metric_data(cf,'miss-pycurl-totaltime',res[0],res[5])  
             cw_put_metric_data(cf,'miss-cdn-upstream-dns',res[0],res[7])
